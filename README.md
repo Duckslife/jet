@@ -1,1 +1,1 @@
-# jet
+# jet Django Study Project
