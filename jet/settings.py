@@ -24,6 +24,25 @@ SECRET_KEY = '4&)f($n^f@a^r7s1qttbaahjp7h!^6ztj$06mp3n^o&%$0!$ui'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+# Logging
+
+LOGGING = {
+	'version': 1,
+	'disable_existing_loggers': False,
+	'handlers': {
+		'console': {
+			'class': 'logging.StreamHandler',
+		},
+
+	},
+	'loggers': {
+		'django':{
+			'hendlers':['console'],
+			'level': os.getenv('DJANGO_LOG_LEVEL', 'INFO'),
+		},
+	},
+}
+
 
 ALLOWED_HOSTS = ['*']
 
