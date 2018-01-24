@@ -31,14 +31,20 @@ LOGGING = {
 	'disable_existing_loggers': False,
 	'handlers': {
 		'console': {
-			'class': 'logging.StreamHandler',
+			#'class': 'logging.StreamHandler',
+			'level' : 'DEBUG',
+			'class' : 'logging.FileHandler',
+			'filename' : 'debug.log',
 		},
 
 	},
 	'loggers': {
 		'django':{
-			'hendlers':['console'],
-			'level': os.getenv('DJANGO_LOG_LEVEL', 'INFO'),
+			#'hendlers':['console'],
+			#'level': os.getenv('DJANGO_LOG_LEVEL', 'INFO'),
+			'hendlers': ['file'],
+			'lever' : 'DEBUG',
+			'propagate' : True,
 		},
 	},
 }
